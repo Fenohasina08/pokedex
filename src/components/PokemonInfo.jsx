@@ -9,14 +9,12 @@ const PokemonInfo = ({ pokemon }) => {
 
     return (
         <div className="bg-white rounded-3xl shadow-2xl p-6 max-w-md mx-auto border border-gray-100">
-            {/* En-tête avec ID et nom */}
             <div className="flex justify-between items-center mb-4">
                 <span className="text-sm font-mono text-gray-400">#{pokemon.id.toString().padStart(3, '0')}</span>
                 <h2 className="text-3xl font-bold text-gray-800 capitalize">{pokemon.name}</h2>
                 <div className="w-8"></div>
             </div>
 
-            {/* Image principale */}
             <div className="bg-gradient-to-br from-yellow-100 to-orange-100 rounded-2xl p-6 flex justify-center mb-6">
                 <img
                     src={pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default}
@@ -25,19 +23,19 @@ const PokemonInfo = ({ pokemon }) => {
                 />
             </div>
 
-            {/* Types (provisoire) */}
+            {/* Types colorés */}
             <div className="flex gap-3 justify-center mb-6">
                 {pokemon.types.map((t) => (
                     <span
                         key={t.type.name}
-                        className="px-6 py-2 rounded-full bg-gray-300 text-gray-800 font-semibold capitalize shadow-md"
+                        className="px-6 py-2 rounded-full text-white font-semibold capitalize shadow-md"
+                        style={{ backgroundColor: typeColors[t.type.name] }}
                     >
                         {t.type.name}
                     </span>
                 ))}
             </div>
 
-            {/* Stats (provisoire) */}
             <div className="mb-6">
                 <h3 className="text-xl font-bold text-gray-700 mb-3">Stats de base</h3>
                 <div className="space-y-3">
@@ -58,7 +56,6 @@ const PokemonInfo = ({ pokemon }) => {
                 </div>
             </div>
 
-            {/* Moves (provisoire) */}
             <div>
                 <h3 className="text-xl font-bold text-gray-700 mb-3">Capacités</h3>
                 <div className="flex flex-wrap gap-2">
@@ -74,6 +71,15 @@ const PokemonInfo = ({ pokemon }) => {
             </div>
         </div>
     );
+};
+
+// Définition des couleurs par type
+const typeColors = {
+    normal: '#A8A77A', fire: '#EE8130', water: '#6390F0', electric: '#F7D02C',
+    grass: '#7AC74C', ice: '#96D9D6', fighting: '#C22E28', poison: '#A33EA1',
+    ground: '#E2BF65', flying: '#A98FF3', psychic: '#F95587', bug: '#A6B91A',
+    rock: '#B6A136', ghost: '#735797', dragon: '#6F35FC', dark: '#705746',
+    steel: '#B7B7CE', fairy: '#D685AD',
 };
 
 export default PokemonInfo;
