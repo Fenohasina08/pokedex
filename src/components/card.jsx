@@ -17,6 +17,7 @@ const Card = ({ pokemon, loading, onPokemonClick }) => {
                         />
                     </div>
                     <div className="mt-3 text-center">
+                        <span className="text-xs text-gray-500">#{p.id.toString().padStart(3, '0')}</span>
                         <h2 className="text-lg font-bold text-gray-800 capitalize">{p.name}</h2>
                         <div className="flex gap-2 justify-center mt-2">
                             {p.types.map((type) => (
@@ -36,7 +37,6 @@ const Card = ({ pokemon, loading, onPokemonClick }) => {
     );
 };
 
-// Définition des couleurs par type
 const typeColors = {
     normal: '#A8A77A', fire: '#EE8130', water: '#6390F0', electric: '#F7D02C',
     grass: '#7AC74C', ice: '#96D9D6', fighting: '#C22E28', poison: '#A33EA1',
