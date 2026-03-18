@@ -17,7 +17,7 @@ const PokemonInfo = ({ pokemon }) => {
                 alt={pokemon.name}
             />
 
-            <div className="flex justify-center gap-2 mt-2 flex-wrap">
+            <div className="flex justify-center gap-2  flex-wrap">
                 {pokemon.types.map((t) => (
                     <div
                         key={t.type.name}

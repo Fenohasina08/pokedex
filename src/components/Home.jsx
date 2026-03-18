@@ -38,7 +38,7 @@ const Home = () => {
     );
 
     return (
-        <div className="bg-[#e2c107] min-h-screen relative">
+        <div className=" ">
              <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-[600px]">
                 <input
                     type="text"
