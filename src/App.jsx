@@ -1,7 +1,8 @@
 import Home from './components/Home'
 const App = () => {
     return (
-        <div className="bg-[#FCEE] py-3">
+        <div className="bg-[#FCEE]">
+            <Header/>
             <Home />
         </div>
     )
