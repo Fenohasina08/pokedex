@@ -61,18 +61,20 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="w-[90%] mx-auto pt-[140px] flex flex-col md:flex-row gap-6">
-                <div className="md:basis-1/2">
-                    <div className="grid gap-[2rem] grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
-                        <Card
-                            pokemon={filteredPokemon}
-                            loading={loading}
-                            onPokemonClick={setPokemonSelected}
-                        />
+            <div className="container mx-auto px-4 py-8">
+                <div className="flex flex-col lg:flex-row gap-8">
+                    <div className="lg:w-1/2">
+                        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
+                            <Card
+                                pokemon={filteredPokemon}
+                                loading={loading}
+                                onPokemonClick={setPokemonSelected}
+                            />
+                        </div>
                     </div>
-                </div>
-                <div className="md:basis-1/2 w-full md:w-[50%] text-center text-black md:fixed top-[120px] right-[10px]">
-                    <PokemonInfo pokemon={pokemonSelected} />
+                    <div className="lg:w-1/2 lg:sticky lg:top-24 lg:h-fit">
+                        <PokemonInfo pokemon={pokemonSelected} />
+                    </div>
                 </div>
             </div>
         </div>
