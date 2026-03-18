@@ -1,8 +1,9 @@
 const PokemonInfo = ({ pokemon }) => {
     if (!pokemon) {
         return (
-            <div className="text-center text-gray-500 mt-10">
-                Sélectionne un Pokémon pour voir les détails.
+            <div className="flex flex-col items-center justify-center h-64 text-gray-400">
+                <div className="w-20 h-20 mb-4 border-4 border-gray-300 rounded-full border-t-transparent animate-spin"></div>
+                <p>Sélectionne un Pokémon pour voir les détails</p>
             </div>
         );
     }
