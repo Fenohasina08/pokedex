@@ -36,6 +36,14 @@ const Home = () => {
         p.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center h-64">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600"></div>
+            </div>
+        );
+    }
+
     return (
         <div className="min-h-screen">
             <div className="sticky top-0 z-40 bg-[#f5f5f5] pt-4 pb-2 shadow-sm">
