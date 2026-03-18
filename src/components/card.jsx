@@ -1,26 +1,27 @@
 const Card = ({ pokemon, loading, onPokemonClick }) => {
+    if (loading) return <div className="text-center col-span-full">Chargement...</div>;
+
     return (
-        <div className="flex  flex-wrap justify-center gap-6">
-            {loading ? (
-                <h1 className="text-xl font-semibold text-center">Loading...</h1>
-            ) : (
-                pokemon.map((item) => (
-                    <div
-                        key={item.id}
-                        onClick={() => onPokemonClick(item)}
-                        className="bg-[#0a0c3e] w-[250px] rounded-xl shadow-lg p-4 flex flex-col items-center justify-center cursor-pointer hover:scale-105 transition"
-                    >
-                        <h2 className="text-xl text-white font-bold mb-2">#{item.id}</h2>
+        <>
+            {pokemon.map((p) => (
+                <div
+                    key={p.id}
+                    onClick={() => onPokemonClick(p)}
+                    className="bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer p-4 border border-gray-100"
+                >
+                    <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-4 flex justify-center">
                         <img
-                            className="w-[80%] h-[50%] object-contain mb-2"
-                            src={item.sprites.front_default}
-                            alt={item.name}
+                            src={p.sprites.other['official-artwork'].front_default || p.sprites.front_default}
+                            alt={p.name}
+                            className="w-32 h-32 object-contain"
                         />
-                        <h2 className="text-xl capitalize text-white font-semibold">{item.name}</h2>
                     </div>
-                ))
-            )}
-        </div>
+                    <div className="mt-3 text-center">
+                        <h2 className="text-lg font-bold text-gray-800 capitalize">{p.name}</h2>
+                    </div>
+                </div>
+            ))}
+        </>
     );
 };
 
