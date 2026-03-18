@@ -23,7 +23,6 @@ const PokemonInfo = ({ pokemon }) => {
                 />
             </div>
 
-            {/* Types colorés */}
             <div className="flex gap-3 justify-center mb-6">
                 {pokemon.types.map((t) => (
                     <span
@@ -47,7 +46,7 @@ const PokemonInfo = ({ pokemon }) => {
                             </div>
                             <div className="w-full bg-gray-200 rounded-full h-2.5">
                                 <div
-                                    className="h-2.5 rounded-full bg-blue-500"
+                                    className="h-2.5 rounded-full bg-gradient-to-r from-red-500 to-orange-400"
                                     style={{ width: `${Math.min((stat.base_stat / 255) * 100, 100)}%` }}
                                 ></div>
                             </div>
@@ -73,7 +72,6 @@ const PokemonInfo = ({ pokemon }) => {
     );
 };
 
-// Définition des couleurs par type
 const typeColors = {
     normal: '#A8A77A', fire: '#EE8130', water: '#6390F0', electric: '#F7D02C',
     grass: '#7AC74C', ice: '#96D9D6', fighting: '#C22E28', poison: '#A33EA1',
