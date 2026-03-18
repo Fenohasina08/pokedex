@@ -45,7 +45,7 @@ const Home = () => {
     }
 
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen bg-[#f5f5f5]">
             <div className="sticky top-0 z-40 bg-[#f5f5f5] pt-4 pb-2 shadow-sm">
                 <div className="container mx-auto max-w-2xl relative">
                     <input
